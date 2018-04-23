@@ -7,8 +7,8 @@ const Title = ({ lineThick, strings, yBase }) => {
   const getComponents = () => {
     const height = (yBase * (strings - 1)) / tabTitle.length
     const yDeflect = ((yBase - lineThick) / 2) - (height / 2) + (lineThick / 2)
-    const radius = 7
-    const tabTitleX = (lineThick * 7) + radius
+    const radius = 8
+    const tabTitleX = (lineThick * 6) + radius
     const components = []
 
     for (let i = 1; i <= tabTitle.length; i++) {

@@ -3,50 +3,40 @@ import PropTypes from 'prop-types'
 import Strings from './strings'
 import Nut from './nut'
 import Title from './title'
+import Markers from './markers'
 
 const Tab = ({lineThick, tab}) => {
   if (!tab || !tab.length) return null
 
   const viewBox = {
-    height: 100 + lineThick,
-    width: 400,
+    height: 80 + (lineThick * 2),
+    width: 600,
     x: 0,
     y: 0
   }
   const strings = tab[0].length
   const yBase = viewBox.height / strings
 
-  const getComponents = () => {
-    const components = []
-
-    components.push(
+  return (
+    <svg className='sb-Tab' viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}>
       <Strings
         lineThick={lineThick}
         strings={strings}
         width={viewBox.width}
         yBase={yBase} />
-    )
-
-    components.push(
       <Nut
         lineThick={lineThick}
         strings={strings}
         yBase={yBase} />
-    )
-
-    components.push(
       <Title
         lineThick={lineThick}
         strings={strings}
         yBase={yBase} />
-    )
-
-    return components
-  }
-
-  return (
-    <svg className='sb-Tab' viewBox={`${viewBox.x} ${viewBox.y} ${viewBox.width} ${viewBox.height}`}>
-      {getComponents()}
+      <Markers
+        lineThick={lineThick}
+        strings={strings}
+        tab={tab}
+        yBase={yBase} />
     </svg>
   )
 }
