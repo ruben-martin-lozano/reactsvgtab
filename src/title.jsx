@@ -3,12 +3,6 @@ import PropTypes from 'prop-types'
 
 const tabTitle = 'TAB'
 
-/*
-<text x={tabTitleX} y={(height * i)} textAnchor='middle' alignmentBaseline='central'>
-  {tabTitle.charAt(i - 1)}
-</text>
-*/
-
 const Title = ({ lineThick, strings, yBase }) => {
   const getComponents = () => {
     const height = (yBase * (strings - 1)) / tabTitle.length
