@@ -11,7 +11,7 @@ const Markers = ({ lineThick, strings, tab, yBase }) => {
 
     for (let i = 1; i <= tab.length; i++) {
       const xPos = tabValueX * i
-      const positions = tab[i - 1].reverse()
+      const positions = tab[i - 1].slice().reverse()
 
       for (let j = 1; j <= positions.length; j++) {
         const tabValue = positions[j - 1]

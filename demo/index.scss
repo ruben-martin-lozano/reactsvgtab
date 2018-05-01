@@ -27,10 +27,6 @@ h1 {
   }
 
   svg {
-    line,
-    polyline {
-      stroke: $c-custom;
-    }
     fill: $c-custom;
   }
 }
@@ -43,10 +39,10 @@ h1 {
   }
 
   svg {
-    line,
-    polyline {
-      stroke: $c-white;
-    }
     fill: $c-white;
+
+    circle {
+      fill: $c-custom;
+    }
   }
 }

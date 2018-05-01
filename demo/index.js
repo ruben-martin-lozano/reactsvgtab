@@ -41,7 +41,12 @@ const guitarTab = [
 const demo = (
   <Fragment>
     <Tab tab={ukuleleTab} />
-    <Tab tab={guitarTab} />
+    <div className='demo-Inverse'>
+      <Tab tab={ukuleleTab} />
+    </div>
+    <div className='demo-Custom'>
+      <Tab tab={guitarTab} />
+    </div>
   </Fragment>
 )
 
