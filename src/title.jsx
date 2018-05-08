@@ -7,8 +7,8 @@ const Title = ({ lineThick, strings, yBase }) => {
   const getComponents = () => {
     const height = (yBase * (strings - 1)) / tabTitle.length
     const yDeflect = ((yBase - lineThick) / 2) - (height / 2) + (lineThick / 2)
-    const radius = 8
-    const tabTitleX = (lineThick * 6) + radius
+    const boxHeight = 7
+    const tabTitleX = (lineThick * 6) + boxHeight
     const components = []
 
     for (let i = 1; i <= tabTitle.length; i++) {
@@ -16,7 +16,13 @@ const Title = ({ lineThick, strings, yBase }) => {
 
       components.push(
         <g key={`title${i}`}>
-          <circle cx={tabTitleX} cy={yPos} r={radius} fill='#ffffff' />
+          <rect
+            fill='#ffffff'
+            x={tabTitleX - boxHeight}
+            y={yPos - boxHeight}
+            width={boxHeight * 2}
+            height={boxHeight * 2}
+          />
           <text x={tabTitleX} y={yPos} textAnchor='middle' alignmentBaseline='central'>
             {tabTitle.charAt(i - 1)}
           </text>

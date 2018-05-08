@@ -4,8 +4,7 @@ import PropTypes from 'prop-types'
 const Markers = ({ lineThick, strings, tab, yBase }) => {
   const getComponents = () => {
     const yDeflect = (yBase / 2) - (lineThick / strings)
-    const radius = 10
-    const xDeflect = lineThick * 18
+    const xDeflect = lineThick * 12
     const tabValueX = lineThick * 12
     const components = []
 
@@ -14,16 +13,23 @@ const Markers = ({ lineThick, strings, tab, yBase }) => {
       const positions = tab[i - 1].slice().reverse()
 
       for (let j = 1; j <= positions.length; j++) {
-        const tabValue = positions[j - 1]
+        const fretPosition = positions[j - 1]
 
-        if (tabValue !== false) {
+        if (fretPosition !== false) {
           const yPos = (yBase * (j - 1)) + yDeflect
+          const boxHeight = fretPosition < 9 ? 7 : 11
 
           components.push(
-            <g key={`tabValue${i}${j}`}>
-              <circle cx={xDeflect + xPos} cy={yPos} r={radius} fill='#ffffff' />
+            <g key={`fretPosition${i}${j}`}>
+              <rect
+                fill='#ffffff'
+                x={xDeflect + xPos - boxHeight}
+                y={yPos - boxHeight}
+                width={boxHeight * 2}
+                height={boxHeight * 2}
+              />
               <text x={xDeflect + xPos} y={yPos} textAnchor='middle' alignmentBaseline='central'>
-                {positions[j - 1]}
+                {fretPosition}
               </text>
             </g>
           )
@@ -35,7 +41,7 @@ const Markers = ({ lineThick, strings, tab, yBase }) => {
   }
 
   return (
-    <g className='sb-Title'>
+    <g className='sb-Markers'>
       {getComponents()}
     </g>
   )

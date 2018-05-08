@@ -9,8 +9,8 @@ const Tab = ({lineThick, tab}) => {
   if (!tab || !tab.length) return null
 
   const viewBox = {
-    height: 80 + (lineThick * 2),
-    width: 600,
+    height: 100 + (lineThick * 2),
+    width: 400,
     x: 0,
     y: 0
   }

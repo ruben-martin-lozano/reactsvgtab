@@ -41,7 +41,8 @@ h1 {
   svg {
     fill: $c-white;
 
-    circle {
+    .sb-Title rect,
+    .sb-Markers rect {
       fill: $c-custom;
     }
   }
