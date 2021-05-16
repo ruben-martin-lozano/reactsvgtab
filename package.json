@@ -16,12 +16,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://ruben-martin-lozano@bitbucket.org/ruben-martin-lozano/reactsvgtab.git"
+    "url": "git+https://github.com/ruben-martin-lozano/reactsvgtab.git"
   },
   "keywords": [],
   "author": "Rubén Martín Lozano",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/ruben-martin-lozano/reactsvgtab#readme",
+  "homepage": "https://github.com/ruben-martin-lozano/reactsvgtab#readme",
   "peerDependencies": {
     "react": "0.14 || 15 || 16"
   },
